@@ -1,0 +1,85 @@
+/* styles.css */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    font-size: 4em;
+}
+
+form {
+    margin-top: 20px;
+    background-color: #b7f1b7;
+
+}
+
+.message {
+	margin-bottom: 5px;
+}
+
+.username {
+	font-weight: bold;
+	color: #008000;
+}
+
+
+
+
+
+#chat-room {
+    width: 100%;
+    max-width: 600px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+#messages {
+    height: 300px;
+    overflow-y: scroll;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #f9f9f9;
+}
+
+#message-input {
+    width: calc(100% - 100px);
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+#send-button {
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+}
+
+#send-button:hover {
+    background-color: #b7f1b7;
+}
+
+.input {
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	padding: 10px;
+	margin-bottom: 10px;
+	width: 100%;
+}
+
+.button:active {
+	background-image: url('svg/buttonActive.svg');
+}
+.button:disabled {
+	background-image: url('svg/buttonDisabled.svg');
+}

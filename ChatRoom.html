@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Room</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #d0e0d0;
+            margin: 0;
+            padding: 0;
+        }
+        .chat-container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        .chat-header {
+            background: #444;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        .chat-messages {
+            flex: 1;
+            padding: 10px;
+            background: #f0f0f0;
+            overflow-y: auto;
+        }
+        .chat-input {
+            display: flex;
+            padding: 10px;
+            background: #ddd;
+        }
+        .chat-input input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .chat-input button {
+            padding: 10px;
+            margin-left: 10px;
+            background: #444;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .chat-input button:hover {
+            background: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <span id="nickname"></span>
+        </div>
+        <div class="chat-messages" id="messages">
+            <!-- Messages will appear here -->
+        </div>
+        <div class="chat-input">
+            <input type="text" id="messageInput" placeholder="Type a message">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const nickname = urlParams.get('nickname');
+            document.getElementById('nickname').innerText = nickname || 'Guest';
+        });
+
+        function sendMessage() {
+            const messageInput = document.getElementById('messageInput');
+            const message = messageInput.value;
+            if (message) {
+                const messageContainer = document.createElement('div');
+                messageContainer.innerText = message;
+                document.getElementById('messages').appendChild(messageContainer);
+                messageInput.value = '';
+                messageContainer.scrollIntoView();
+            }
+        }
+    </script>
+</body>
+</html>

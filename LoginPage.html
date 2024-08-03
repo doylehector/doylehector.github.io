@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ffffff;
+            padding: 50px;
+        }
+        .container {
+            position: relative;
+            display: inline-block;
+            background: #ffffff;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        p {
+            color: #a00;
+            font-weight: bold;
+        }
+        input[type="text"] {
+            padding: 10px;
+            width: 80%;
+            margin: 10px 0;
+            border: 1px solid #fcfcfc;
+            border-radius: 5px;
+        }
+        input[type="button"] {
+            padding: 10px 20px;
+            background: #444;
+            color: #fff;
+            border: #d0eee7;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="button"]:hover {
+            background: #666;
+        }
+
+
+        
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Chat</h1>
+        <p>Welcome to Connectra </p>
+        <p>Talk to Strangers have fun </p>
+        <input type="text" id="nickname" placeholder="Enter your nickname">
+        <input type="button" value="Join" onclick="joinChat()">
+
+        <!-- Carnival lights bulbs -->
+        <div class="bulb top"></div>
+        <div class="bulb bottom"></div>
+        <div class="bulb left"></div>
+        <div class="bulb right"></div>
+        <div class="bulb top-left"></div>
+        <div class="bulb top-right"></div>
+        <div class="bulb bottom-left"></div>
+        <div class="bulb bottom-right"></div>
+        <div class="bulb middle-top-left"></div>
+        <div class="bulb middle-top-right"></div>
+        <div class="bulb middle-bottom-left"></div>
+        <div class="bulb middle-bottom-right"></div>
+        <div class="bulb middle-left-top"></div>
+        <div class="bulb middle-left-bottom"></div>
+        <div class="bulb middle-right-top"></div>
+        <div class="bulb middle-right-bottom"></div>
+    </div>
+
+    <script>
+        function joinChat() {
+            var nickname = document.getElementById('nickname').value;
+            if (nickname) {
+                window.location.href = 'chat.html?nickname=' + encodeURIComponent(nickname);
+            } else {
+                alert('Please enter a nickname.');
+            }
+        }
+    </script>
+</body>
+</html>
